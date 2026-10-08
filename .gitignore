@@ -1,0 +1,14 @@
+.build/
+release/
+driver/out/
+*.obj
+*.pdb
+*.exe
+*.dll
+*.lib
+*.exp
+*.ico
+*.cat
+*.cer
+*.pfx
+*.log
