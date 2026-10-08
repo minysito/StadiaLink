@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+ <title>StadiaLink — linked angular nodes</title>
+ <defs><linearGradient id="link" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#CAF57A"/><stop offset="1" stop-color="#66D9CB"/></linearGradient></defs>
+ <g fill="none" stroke="url(#link)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M31 12 L18 12 L8 24 L18 36 L30 36"/>
+  <path d="M33 52 L46 52 L56 40 L46 28 L34 28"/>
+  <path d="M25 42 L39 22"/>
+ </g>
+</svg>
