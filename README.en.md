@@ -119,7 +119,9 @@ This requests administrator privileges, removes this driver's packages and retur
 
 Bluetooth vibration uses private Windows interfaces tested on Windows 11 build **26200**; system updates may change them. The audio jack works over USB. Bluetooth audio, integrated microphone activation and Wi-Fi activation are not provided. Timing figures measure HID queries and interface updates, not total physical latency through a game and display.
 
-Part of this project was made possible by **aisk's WinStadia**, from which StadiaLink's native driver derives. Full upstream repository: **https://github.com/aisk/WinStadia**.
+**Incorporated third-party code: [aisk/WinStadia](https://github.com/aisk/WinStadia).** It is the base of the native driver included in this repository, with StadiaLink modifications. The integration covers the UMDF structure, Stadia-to-XInput input translation and USB/Bluetooth transports in `driver/`, along with derived scripts and INF.
+
+Full upstream repository: **https://github.com/aisk/WinStadia**.
 
 Upstream reference: [commit e9e84a0a24c3cc13bf7cc7ac2b8baa2b653ce80a](https://github.com/aisk/WinStadia/commit/e9e84a0a24c3cc13bf7cc7ac2b8baa2b653ce80a). Copyright notices are retained. StadiaLink and its modifications are distributed under **GPL-3.0**; see [LICENSE](LICENSE) and [UPSTREAM-README.md](UPSTREAM-README.md). This project is independent of Google and Microsoft.
 

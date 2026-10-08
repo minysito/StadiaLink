@@ -119,7 +119,9 @@ Das Skript fordert Administratorrechte an, entfernt die Pakete dieses Treibers u
 
 Bluetooth-Vibration nutzt private Windows-Schnittstellen, getestet auf Windows 11 Build **26200**. Systemupdates können sie verändern. Die Audiobuchse funktioniert über USB. Bluetooth-Audio sowie die Aktivierung des integrierten Mikrofons oder von WLAN werden nicht angeboten. Zeitmessungen betreffen HID-Abfragen und die Oberfläche, nicht die gesamte physische Latenz von Spiel und Bildschirm.
 
-Teile dieses Projekts wurden durch **aisks WinStadia** ermöglicht, von dem der native Treiber abgeleitet ist. Vollständiges Original-Repository: **https://github.com/aisk/WinStadia**.
+**Eingebundener Drittanbieter-Code: [aisk/WinStadia](https://github.com/aisk/WinStadia).** Er bildet die Grundlage des nativen Treibers in diesem Repository, ergänzt um Änderungen von StadiaLink. Die Integration umfasst die UMDF-Struktur, die Übersetzung von Stadia-Eingaben zu XInput und die USB/Bluetooth-Transporte in `driver/` sowie abgeleitete Skripte und die INF-Datei.
+
+Vollständiges Original-Repository: **https://github.com/aisk/WinStadia**.
 
 Ausgangsstand: [Commit e9e84a0a24c3cc13bf7cc7ac2b8baa2b653ce80a](https://github.com/aisk/WinStadia/commit/e9e84a0a24c3cc13bf7cc7ac2b8baa2b653ce80a). Copyright-Hinweise bleiben erhalten. StadiaLink und seine Änderungen stehen unter **GPL-3.0**; siehe [LICENSE](LICENSE) und [UPSTREAM-README.md](UPSTREAM-README.md). Unabhängiges Projekt ohne Verbindung zu Google oder Microsoft.
 
