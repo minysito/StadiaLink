@@ -1,0 +1,241 @@
+﻿Mando|Controller|Manette|Controller
+Sticks y gatillos|Sticks and triggers|Sticks et gâchettes|Sticks und Trigger
+Vibración|Vibration|Vibration|Vibration
+Perfiles|Profiles|Profils|Profile
+Aplicación|Application|Application|Anwendung
+Idioma|Language|Langue|Sprache
+Guardar y aplicar|Save and apply|Enregistrer et appliquer|Speichern und anwenden
+Los cambios se descartan al cambiar de pestaña.|Unsaved changes are discarded when switching tabs.|Les modifications non enregistrées sont annulées en changeant d’onglet.|Ungespeicherte Änderungen werden beim Tabwechsel verworfen.
+Configuración del mando|Controller settings|Réglages de la manette|Controller-Einstellungen
+Buscando tu Stadia…|Looking for your Stadia…|Recherche de votre Stadia…|Stadia wird gesucht…
+Buscando mando|Looking for controller|Recherche de la manette|Controller wird gesucht
+Sin conexión|Disconnected|Déconnecté|Nicht verbunden
+●  MANDO CONECTADO|●  CONTROLLER CONNECTED|●  MANETTE CONNECTÉE|●  CONTROLLER VERBUNDEN
+○  SIN CONEXIÓN|○  DISCONNECTED|○  DÉCONNECTÉ|○  NICHT VERBUNDEN
+●  BUSCANDO|●  SEARCHING|●  RECHERCHE|●  SUCHE
+Enciende tu Stadia|Turn on your Stadia|Allumez votre Stadia|Stadia einschalten
+Conectado por USB|Connected via USB|Connecté en USB|Über USB verbunden
+Batería: |Battery: |Batterie : |Akku: 
+Batería: —|Battery: —|Batterie : —|Akku: —
+Batería: no disponible|Battery: unavailable|Batterie : indisponible|Akku: nicht verfügbar
+Asignación|Mapping|Affectation|Belegung
+Selecciona un botón y su función.|Select a button and its function.|Choisissez un bouton et sa fonction.|Taste und Funktion auswählen.
+Botón físico|Physical button|Bouton physique|Physische Taste
+Función|Function|Fonction|Funktion
+Pulsa un botón del dibujo para cambiar su función.|Click a button in the drawing to change its function.|Cliquez sur un bouton du dessin pour modifier sa fonction.|Eine Taste in der Zeichnung anklicken, um ihre Funktion zu ändern.
+Gatillo izquierdo|Left trigger|Gâchette gauche|Linker Trigger
+Gatillo derecho|Right trigger|Gâchette droite|Rechter Trigger
+StadiaLink debe estar abierto para las acciones de Windows.|StadiaLink must remain open for Windows actions.|StadiaLink doit rester ouvert pour les actions Windows.|StadiaLink muss für Windows-Aktionen geöffnet bleiben.
+Los controles Xbox siguen activos al cerrar la app.|Xbox mappings remain active after closing the app.|Les affectations Xbox restent actives après la fermeture.|Xbox-Belegungen bleiben nach dem Schließen aktiv.
+Probar vibración|Test vibration|Tester la vibration|Vibration testen
+Restaurar este perfil|Reset this profile|Réinitialiser ce profil|Dieses Profil zurücksetzen
+Cambios sin aplicar|Unapplied changes|Modifications non appliquées|Nicht angewendete Änderungen
+Sin cambios|No changes|Aucune modification|Keine Änderungen
+Puedes repetir una función en varios botones o dejar una entrada sin asignar.|You can assign one function to several buttons or leave an input unmapped.|Une fonction peut être affectée à plusieurs boutons ; une entrée peut rester sans affectation.|Eine Funktion kann mehreren Tasten zugewiesen oder eine Eingabe unbelegt gelassen werden.
+Al asignarlo a un botón, se activa al superar el umbral de gatillo configurado.|When mapped to a button, it activates above the configured trigger threshold.|Affectée à un bouton, elle s’active au-delà du seuil de gâchette défini.|Bei Tastenzuweisung wird die Eingabe oberhalb des eingestellten Trigger-Schwellenwerts aktiviert.
+Recorrido analógico|Analog travel|Course analogique|Analoger Weg
+Gatillos|Triggers|Gâchettes|Trigger
+Ajusta dónde empieza el recorrido y cuándo se convierte en una pulsación de botón.|Set where travel begins and when it becomes a button press.|Réglez le début de course et le seuil de déclenchement d’un bouton.|Beginn des Wegs und Auslöseschwelle für eine Taste einstellen.
+Zona muerta de gatillos|Trigger deadzone|Zone morte des gâchettes|Trigger-Totzone
+Umbral para botones reasignados|Remapped button threshold|Seuil des boutons réaffectés|Schwelle für neu belegte Tasten
+Intercambiar gatillos izquierdo y derecho|Swap left and right triggers|Inverser les gâchettes gauche et droite|Linken und rechten Trigger tauschen
+Intercambiar sticks izquierdo y derecho|Swap left and right sticks|Inverser les sticks gauche et droit|Linken und rechten Stick tauschen
+Stick izquierdo|Left stick|Stick gauche|Linker Stick
+Stick derecho|Right stick|Stick droit|Rechter Stick
+La zona muerta elimina movimientos involuntarios cerca del centro.|The deadzone removes unintended movement near the center.|La zone morte supprime les mouvements involontaires près du centre.|Die Totzone verhindert unbeabsichtigte Bewegungen nahe der Mitte.
+Zona muerta|Deadzone|Zone morte|Totzone
+Sensibilidad|Sensitivity|Sensibilité|Empfindlichkeit
+Invertir eje horizontal|Invert horizontal axis|Inverser l’axe horizontal|Horizontale Achse invertieren
+Invertir eje vertical|Invert vertical axis|Inverser l’axe vertical|Vertikale Achse invertieren
+Respuesta háptica|Haptic feedback|Retour haptique|Haptisches Feedback
+Ajusta por separado los dos motores del Stadia. Las pruebas se detienen automáticamente.|Adjust each Stadia motor separately. Tests stop automatically.|Réglez chaque moteur séparément. Les tests s’arrêtent automatiquement.|Beide Stadia-Motoren getrennt einstellen. Tests stoppen automatisch.
+Motor izquierdo|Left motor|Moteur gauche|Linker Motor
+Motor derecho|Right motor|Moteur droit|Rechter Motor
+Motor fuerte|Strong motor|Moteur puissant|Starker Motor
+Motor suave|Light motor|Moteur léger|Leichter Motor
+Intensidad|Intensity|Intensité|Intensität
+Probar motor izquierdo|Test left motor|Tester le moteur gauche|Linken Motor testen
+Probar motor derecho|Test right motor|Tester le moteur droit|Rechten Motor testen
+Probar ambos motores|Test both motors|Tester les deux moteurs|Beide Motoren testen
+Detener vibración|Stop vibration|Arrêter la vibration|Vibration stoppen
+Conecta el mando para probar la vibración.|Connect the controller to test vibration.|Connectez la manette pour tester la vibration.|Controller verbinden, um die Vibration zu testen.
+El canal Bluetooth no está disponible. Reconecta el mando.|Bluetooth channel unavailable. Reconnect the controller.|Canal Bluetooth indisponible. Reconnectez la manette.|Bluetooth-Kanal nicht verfügbar. Controller erneut verbinden.
+El último envío no se completó. Reconecta el mando y vuelve a probar.|The last write failed. Reconnect and try again.|Le dernier envoi a échoué. Reconnectez la manette et réessayez.|Letztes Senden fehlgeschlagen. Erneut verbinden und testen.
+Canal de vibración disponible · |Vibration channel available · |Canal de vibration disponible · |Vibrationskanal verfügbar · 
+ envíos confirmados · | confirmed writes · | envois confirmés · | bestätigte Übertragungen · 
+ paradas.| stops.| arrêts.| Stopps.
+Guarda tus ajustes, duplica un perfil y compártelo en un archivo JSON.|Save your settings, duplicate a profile and share it as JSON.|Enregistrez vos réglages, dupliquez un profil et partagez-le en JSON.|Einstellungen speichern, Profile duplizieren und als JSON teilen.
++ Nuevo perfil|+ New profile|+ Nouveau profil|+ Neues Profil
+Importar perfil|Import profile|Importer un profil|Profil importieren
+Perfil seleccionado|Selected profile|Profil sélectionné|Ausgewähltes Profil
+Nombre|Name|Nom|Name
+Los cambios del perfil se guardan con Guardar y aplicar.|Use Save and apply to save profile changes.|Utilisez Enregistrer et appliquer pour sauvegarder le profil.|Profiländerungen mit Speichern und anwenden speichern.
+Duplicar|Duplicate|Dupliquer|Duplizieren
+Exportar JSON|Export JSON|Exporter en JSON|JSON exportieren
+Eliminar perfil|Delete profile|Supprimer le profil|Profil löschen
+Cada perfil incluye botones, sticks, gatillos y vibración.|Each profile includes buttons, sticks, triggers and vibration.|Chaque profil comprend boutons, sticks, gâchettes et vibration.|Jedes Profil umfasst Tasten, Sticks, Trigger und Vibration.
+Perfil|Profile|Profil|Profil
+Perfil activo|Active profile|Profil actif|Aktives Profil
+Atajos|Shortcuts|Raccourcis|Tastenkürzel
+Voz y accesos rápidos|Voice and shortcuts|Voix et raccourcis|Sprachchat und Tastenkürzel
+Elige la misma tecla en StadiaLink y en el juego o en los atajos de Discord. Guarda y aplica para activarla.|Choose the same key in StadiaLink and in your game or Discord keybinds. Save and apply to enable it.|Choisissez la même touche dans StadiaLink et dans le jeu ou Discord. Enregistrez et appliquez pour l’activer.|Dieselbe Taste in StadiaLink und im Spiel oder Discord einstellen. Zum Aktivieren speichern und anwenden.
+Pulsar para hablar · Asistente|Push to talk · Assistant|Appuyer pour parler · Assistant|Push-to-Talk · Assistent
+Silenciar / activar micrófono · Captura|Toggle microphone mute · Capture|Activer / couper le micro · Capture|Mikrofon stummschalten · Aufnahme
+Atajo adicional · Stadia|Additional shortcut · Stadia|Raccourci supplémentaire · Stadia|Zusätzliches Tastenkürzel · Stadia
+Preferencias|Preferences|Préférences|Einstellungen
+Inicio y avisos|Startup and notifications|Démarrage et notifications|Start und Benachrichtigungen
+Abrir StadiaLink al iniciar Windows, en la bandeja|Start StadiaLink with Windows, in the tray|Démarrer StadiaLink avec Windows, dans la zone de notification|StadiaLink mit Windows im Infobereich starten
+Avisos de conexión y batería|Connection and battery notifications|Notifications de connexion et de batterie|Verbindungs- und Akkubenachrichtigungen
+Batería baja: 15 % o menos. Nivel máximo: 100 %.|Low battery: 15% or less. Maximum level: 100%.|Batterie faible : 15 % ou moins. Niveau maximal : 100 %.|Niedriger Akku: 15 % oder weniger. Höchststand: 100 %.
+Conexión|Connection|Connexion|Verbindung
+Tu dispositivo|Your device|Votre appareil|Dein Gerät
+Enciende el Stadia y emparéjalo desde los ajustes Bluetooth de Windows.|Turn on Stadia and pair it in Windows Bluetooth settings.|Allumez Stadia et associez-la dans les paramètres Bluetooth de Windows.|Stadia einschalten und in den Windows-Bluetooth-Einstellungen koppeln.
+Mando detectado. Instala el controlador incluido para activar la configuración.|Controller detected. Install the included driver to enable settings.|Manette détectée. Installez le pilote inclus pour activer les réglages.|Controller erkannt. Mitgelieferten Treiber installieren, um Einstellungen zu aktivieren.
+Mando detectado · |Controller detected · |Manette détectée · |Controller erkannt · 
+ · Configuración compatible.| · Settings supported.| · Réglages compatibles.| · Einstellungen unterstützt.
+Abrir ajustes Bluetooth|Open Bluetooth settings|Ouvrir les paramètres Bluetooth|Bluetooth-Einstellungen öffnen
+Volver a detectar|Scan again|Rechercher à nouveau|Erneut suchen
+Reparar controlador|Repair driver|Réparer le pilote|Treiber reparieren
+Archivos|Files|Fichiers|Dateien
+Los perfiles se guardan en esta cuenta de Windows.|Profiles are stored in this Windows account.|Les profils sont enregistrés dans ce compte Windows.|Profile werden in diesem Windows-Konto gespeichert.
+Abrir carpeta de perfiles|Open profiles folder|Ouvrir le dossier des profils|Profilordner öffnen
+Configura esta misma combinación en el juego o en Discord.|Set this same key combination in your game or Discord.|Définissez cette combinaison dans le jeu ou Discord.|Diese Tastenkombination im Spiel oder Discord einstellen.
+Mantener la tecla mientras pulso el botón|Hold the key while pressing the button|Maintenir la touche pendant l’appui sur le bouton|Taste während des Tastendrucks gedrückt halten
+Marcado: pulsar para hablar. Desmarcado: atajo para alternar el silencio del micrófono o cualquier otra acción.|Checked: push to talk. Unchecked: shortcut to toggle microphone mute or another action.|Coché : appuyer pour parler. Décoché : raccourci pour couper le micro ou une autre action.|Aktiviert: Push-to-Talk. Deaktiviert: Tastenkürzel für Mikrofonstummschaltung oder andere Aktionen.
+Actualizar borrador|Update draft|Mettre à jour le brouillon|Entwurf aktualisieren
+Configurar atajo|Configure shortcut|Configurer le raccourci|Tastenkürzel konfigurieren
+Opciones|Options|Options|Optionen
+Menú|Menu|Menu|Menü
+Captura|Capture|Capture|Aufnahme
+Asistente|Assistant|Assistant|Assistent
+Cruceta|D-pad|Croix directionnelle|Steuerkreuz
+Sin asignar|Unmapped|Non affecté|Nicht belegt
+LS · pulsación|LS · press|LS · appui|LS · Druck
+RS · pulsación|RS · press|RS · appui|RS · Druck
+Xbox · guía|Xbox · guide|Xbox · guide|Xbox · Guide
+Control del mando|Gamepad control|Commande de manette|Controller-Steuerung
+Subir volumen|Volume up|Augmenter le volume|Lautstärke erhöhen
+Bajar volumen|Volume down|Baisser le volume|Lautstärke senken
+Silenciar audio|Mute audio|Couper le son|Ton stummschalten
+Reproducir / pausar|Play / pause|Lecture / pause|Wiedergabe / Pause
+Pista siguiente|Next track|Piste suivante|Nächster Titel
+Pista anterior|Previous track|Piste précédente|Vorheriger Titel
+Recorte de pantalla|Screen snip|Capture d’écran|Bildschirmausschnitt
+Mostrar escritorio|Show desktop|Afficher le bureau|Desktop anzeigen
+Cambiar de ventana|Switch window|Changer de fenêtre|Fenster wechseln
+Atrás|Back|Retour|Zurück
+Adelante|Forward|Suivant|Vorwärts
+Tecla mantenida / pulsar para hablar|Held key / push to talk|Touche maintenue / appuyer pour parler|Gehaltene Taste / Push-to-Talk
+Atajo al pulsar|Shortcut on press|Raccourci à l’appui|Tastenkürzel beim Drücken
+Espacio|Space|Espace|Leertaste
+Retroceso|Backspace|Retour arrière|Rücktaste
+Abrir StadiaLink|Open StadiaLink|Ouvrir StadiaLink|StadiaLink öffnen
+Salir|Quit|Quitter|Beenden
+Mando desconectado|Controller disconnected|Manette déconnectée|Controller getrennt
+StadiaLink · sin mando|StadiaLink · no controller|StadiaLink · aucune manette|StadiaLink · kein Controller
+StadiaLink · batería no disponible|StadiaLink · battery unavailable|StadiaLink · batterie indisponible|StadiaLink · Akku nicht verfügbar
+Stadia conectado|Stadia connected|Stadia connecté|Stadia verbunden
+Stadia desconectado|Stadia disconnected|Stadia déconnecté|Stadia getrennt
+El mando está listo para usar.|The controller is ready to use.|La manette est prête à l’emploi.|Der Controller ist einsatzbereit.
+Se ha perdido la conexión con el mando.|The controller connection was lost.|La connexion avec la manette a été perdue.|Die Verbindung zum Controller wurde unterbrochen.
+Batería baja|Low battery|Batterie faible|Niedriger Akkustand
+ % de batería. Conecta el mando por USB para cargarlo.|% battery. Connect the controller via USB to charge.| % de batterie. Branchez la manette en USB pour la charger.| % Akku. Controller zum Laden per USB verbinden.
+Batería al 100 %|Battery at 100%|Batterie à 100 %|Akku bei 100 %
+El mando ha alcanzado el nivel máximo de batería.|The controller battery has reached its maximum level.|La batterie de la manette a atteint son niveau maximal.|Der Controller-Akku hat seinen Höchststand erreicht.
+Cambios descartados.|Changes discarded.|Modifications annulées.|Änderungen verworfen.
+Cambios pendientes · Guarda para aplicarlos al mando.|Pending changes · Save to apply them.|Modifications en attente · Enregistrez pour les appliquer.|Ausstehende Änderungen · Zum Anwenden speichern.
+Perfil abierto. Pulsa Guardar y aplicar para activarlo en el mando.|Profile opened. Choose Save and apply to activate it.|Profil ouvert. Enregistrez et appliquez pour l’activer.|Profil geöffnet. Zum Aktivieren speichern und anwenden.
+Perfil guardado y aplicado.|Profile saved and applied.|Profil enregistré et appliqué.|Profil gespeichert und angewendet.
+Perfil guardado. Se aplicará cuando conectes el mando con StadiaLink abierto.|Profile saved. It will apply when the controller connects with StadiaLink open.|Profil enregistré. Il sera appliqué à la connexion de la manette avec StadiaLink ouvert.|Profil gespeichert. Wird beim Verbinden mit geöffnetem StadiaLink angewendet.
+Aplicado al mando|Applied to controller|Appliqué à la manette|Auf Controller angewendet
+Guardado · pendiente de conexión|Saved · waiting for connection|Enregistré · connexion attendue|Gespeichert · Verbindung ausstehend
+Prueba enviada. Ajustes sin guardar.|Test sent. Settings not saved.|Test envoyé. Réglages non enregistrés.|Test gesendet. Einstellungen nicht gespeichert.
+Orden de parada enviada.|Stop command sent.|Commande d’arrêt envoyée.|Stoppbefehl gesendet.
+Stadia detectado. Listo para configurar.|Stadia detected. Ready to configure.|Stadia détecté. Prêt à configurer.|Stadia erkannt. Bereit zur Konfiguration.
+Perfil aplicado.|Profile applied.|Profil appliqué.|Profil angewendet.
+Perfil exportado.|Profile exported.|Profil exporté.|Profil exportiert.
+Perfil creado. Guárdalo y aplícalo cuando esté listo.|Profile created. Save and apply when ready.|Profil créé. Enregistrez et appliquez quand il est prêt.|Profil erstellt. Nach Fertigstellung speichern und anwenden.
+Ya existe un perfil con ese nombre.|A profile with that name already exists.|Un profil porte déjà ce nom.|Ein Profil mit diesem Namen existiert bereits.
+Conecta el mando para probar la vibración.|Connect the controller to test vibration.|Connectez la manette pour tester la vibration.|Controller verbinden, um Vibration zu testen.
+Instala el controlador incluido para configurar el mando.|Install the included driver to configure the controller.|Installez le pilote inclus pour configurer la manette.|Mitgelieferten Treiber zur Controller-Konfiguration installieren.
+Instala el controlador incluido para usar las pruebas.|Install the included driver to use tests.|Installez le pilote inclus pour utiliser les tests.|Mitgelieferten Treiber für Tests installieren.
+Actualiza el controlador incluido para probar ajustes sin guardarlos.|Update the included driver to preview unsaved settings.|Mettez à jour le pilote pour tester les réglages non enregistrés.|Mitgelieferten Treiber für ungespeicherte Tests aktualisieren.
+Versión|Version|Version|Version
+Nuevo perfil|New profile|Nouveau profil|Neues Profil
+Copia de perfil|Profile copy|Copie de profil|Profilkopie
+ · copia| · copy| · copie| · Kopie
+¿Eliminar el perfil «|Delete profile «|Supprimer le profil «|Profil löschen: «
+La biblioteca admite hasta 100 perfiles.|The library supports up to 100 profiles.|La bibliothèque accepte jusqu’à 100 profils.|Die Bibliothek unterstützt bis zu 100 Profile.
+No se pudo cargar la biblioteca: |Could not load the library: |Impossible de charger la bibliothèque : |Bibliothek konnte nicht geladen werden: 
+Acción no válida.|Invalid action.|Action non valide.|Ungültige Aktion.
+Tecla no válida.|Invalid key.|Touche non valide.|Ungültige Taste.
+El perfil contiene valores no válidos.|The profile contains invalid values.|Le profil contient des valeurs non valides.|Das Profil enthält ungültige Werte.
+Perfil vacío.|Empty profile.|Profil vide.|Leeres Profil.
+Biblioteca no válida.|Invalid library.|Bibliothèque non valide.|Ungültige Bibliothek.
+Hay nombres de perfil duplicados.|Duplicate profile names.|Noms de profils en double.|Doppelte Profilnamen.
+La biblioteca de perfiles es demasiado grande.|The profile library is too large.|La bibliothèque de profils est trop volumineuse.|Die Profilbibliothek ist zu groß.
+El archivo de perfil es demasiado grande.|The profile file is too large.|Le fichier de profil est trop volumineux.|Die Profildatei ist zu groß.
+La acción de Windows requiere una entrada sin asignación Xbox y una tecla válida.|A Windows action requires an input without an Xbox mapping and a valid key.|Une action Windows nécessite une entrée sans affectation Xbox et une touche valide.|Eine Windows-Aktion benötigt eine Eingabe ohne Xbox-Belegung und eine gültige Taste.
+El controlador no ha confirmado la configuración.|The driver did not confirm the settings.|Le pilote n’a pas confirmé les réglages.|Der Treiber hat die Einstellungen nicht bestätigt.
+Actualiza el controlador para configurar el mando.|Update the driver to configure the controller.|Mettez à jour le pilote pour configurer la manette.|Treiber zur Konfiguration des Controllers aktualisieren.
+Respuesta de configuración no válida.|Invalid configuration response.|Réponse de configuration non valide.|Ungültige Konfigurationsantwort.
+Archivo demasiado grande.|File too large.|Fichier trop volumineux.|Datei zu groß.
+Windows no ha aceptado el atajo.|Windows did not accept the shortcut.|Windows n’a pas accepté le raccourci.|Windows hat das Tastenkürzel nicht akzeptiert.
+Abre el instalador de StadiaLink para instalar el controlador.|Open the StadiaLink installer to install the driver.|Ouvrez l’installateur de StadiaLink pour installer le pilote.|Stadia-StadiaLink-Installer öffnen, um den Treiber zu installieren.
+Controlador instalado. Si Windows lo pide, reconecta el mando o reinicia el equipo.|Driver installed. Reconnect or restart if Windows requests it.|Pilote installé. Reconnectez la manette ou redémarrez si Windows le demande.|Treiber installiert. Bei Aufforderung von Windows erneut verbinden oder neu starten.
+Todo preparado para instalar.|Ready to install.|Prêt à installer.|Bereit zur Installation.
+Instalar StadiaLink|Install StadiaLink|Installer StadiaLink|StadiaLink installieren
+Desinstalar StadiaLink|Uninstall StadiaLink|Désinstaller StadiaLink|StadiaLink deinstallieren
+Retirar también el controlador del mando|Also remove the controller driver|Supprimer aussi le pilote de la manette|Controller-Treiber ebenfalls entfernen
+Retira la aplicación de esta cuenta de Windows. Tus perfiles se conservarán.|Remove the app from this Windows account. Your profiles will be kept.|Supprimez l’application de ce compte Windows. Vos profils seront conservés.|App aus diesem Windows-Konto entfernen. Profile bleiben erhalten.
+Aplicación y controlador para Windows 11 x64.|App and driver for Windows 11 x64.|Application et pilote pour Windows 11 x64.|App und Treiber für Windows 11 x64.
+Desinstalación|Uninstall|Désinstallation|Deinstallation
+Incluye|Includes|Comprend|Enthalten
+Se eliminarán StadiaLink y su acceso del menú Inicio.|StadiaLink and its Start menu shortcut will be removed.|StadiaLink et son raccourci du menu Démarrer seront supprimés.|StadiaLink und die Startmenü-Verknüpfung werden entfernt.
+Retirar el controlador afecta a todos los usuarios del equipo y requiere permiso de administrador.|Removing the driver affects all users and requires administrator permission.|La suppression du pilote concerne tous les utilisateurs et nécessite des droits administrateur.|Das Entfernen des Treibers betrifft alle Benutzer und erfordert Administratorrechte.
+✓  Detección automática por Bluetooth y USB|✓  Automatic Bluetooth and USB detection|✓  Détection automatique Bluetooth et USB|✓  Automatische Bluetooth- und USB-Erkennung
+✓  Botones, sticks, gatillos y vibración|✓  Buttons, sticks, triggers and vibration|✓  Boutons, sticks, gâchettes et vibration|✓  Tasten, Sticks, Trigger und Vibration
+✓  Perfiles y acciones de Windows|✓  Profiles and Windows actions|✓  Profils et actions Windows|✓  Profile und Windows-Aktionen
+✓  Instalación sin descargas|✓  Installation without downloads|✓  Installation sans téléchargement|✓  Installation ohne Downloads
+Los ajustes Bluetooth de Windows no se modificarán.|Windows Bluetooth settings will stay unchanged.|Les paramètres Bluetooth de Windows seront conservés.|Windows-Bluetooth-Einstellungen bleiben unverändert.
+Windows 11 · x64. Windows pedirá permiso de administrador para instalar el controlador y su certificado local.|Windows 11 · x64. Administrator permission is required to install the driver and its local certificate.|Windows 11 · x64. Des droits administrateur sont nécessaires pour installer le pilote et son certificat local.|Windows 11 · x64. Für Treiber und lokales Zertifikat werden Administratorrechte benötigt.
+Licencia GPLv3|GPLv3 license|Licence GPLv3|GPLv3-Lizenz
+Desinstalar|Uninstall|Désinstaller|Deinstallieren
+Reintentar|Retry|Réessayer|Erneut versuchen
+Cerrar|Close|Fermer|Schließen
+Retirando StadiaLink…|Removing StadiaLink…|Suppression de StadiaLink…|StadiaLink wird entfernt…
+Retirando el controlador…|Removing the driver…|Suppression du pilote…|Treiber wird entfernt…
+Aplicación desinstalada. Tus perfiles se han conservado.|App uninstalled. Your profiles have been kept.|Application désinstallée. Vos profils ont été conservés.|App deinstalliert. Profile wurden beibehalten.
+Preparando la aplicación…|Preparing the app…|Préparation de l’application…|App wird vorbereitet…
+Instalando el controlador. Acepta el permiso de Windows…|Installing the driver. Accept the Windows permission prompt…|Installation du pilote. Acceptez l’autorisation Windows…|Treiber wird installiert. Windows-Berechtigung bestätigen…
+Creando el acceso del menú Inicio…|Creating Start menu shortcut…|Création du raccourci du menu Démarrer…|Startmenü-Verknüpfung wird erstellt…
+Instalado. Si el mando no aparece, reconéctalo o reinicia Windows.|Installed. If the controller does not appear, reconnect it or restart Windows.|Installé. Si la manette n’apparaît pas, reconnectez-la ou redémarrez Windows.|Installiert. Falls der Controller fehlt, erneut verbinden oder Windows neu starten.
+Instalado. Enciende tu Stadia y abre StadiaLink.|Installed. Turn on Stadia and open StadiaLink.|Installé. Allumez votre Stadia et ouvrez StadiaLink.|Installiert. Stadia einschalten und StadiaLink öffnen.
+Abrir StadiaLink|Open StadiaLink|Ouvrir StadiaLink|StadiaLink öffnen
+Se necesita Windows x64.|Windows x64 is required.|Windows x64 est nécessaire.|Windows x64 ist erforderlich.
+Se necesita Windows 11.|Windows 11 is required.|Windows 11 est nécessaire.|Windows 11 ist erforderlich.
+Cierra StadiaLink antes de continuar.|Close StadiaLink before continuing.|Fermez StadiaLink avant de continuer.|StadiaLink vor dem Fortfahren schließen.
+La aplicación ya no está instalada.|The app is no longer installed.|L’application n’est plus installée.|Die App ist nicht mehr installiert.
+
+ · Cargando| · Charging| · En charge| · Wird geladen
+ · Carga completa| · Fully charged| · Charge complète| · Vollständig geladen
+
+Sin zona muerta	No deadzone	Sans zone morte	Ohne Totzone
+○ Entrada física   ● Salida configurada	○ Physical input   ● Configured output	○ Entrée physique   ● Sortie configurée	○ Physische Eingabe   ● Konfigurierte Ausgabe
+
+Iniciar con Windows	Start with Windows	Démarrer avec Windows	Mit Windows starten
+Umbral	Threshold	Seuil	Schwelle
+Inicio con Windows activado	Windows startup enabled	Démarrage Windows activé	Windows-Autostart aktiviert
+Inicio con Windows desactivado	Windows startup disabled	Démarrage Windows désactivé	Windows-Autostart deaktiviert
+Entrada	Input	Entrée	Eingabe
+Salida	Output	Sortie	Ausgabe
+Listo	Ready	Prêt	Bereit
+
+Ajustes	Settings	Paramètres	Einstellungen
+Vibración continua	Continuous vibration	Vibration continue	Dauervibration
+Vibración detenida	Vibration stopped	Vibration arrêtée	Vibration beendet
+Tiempo de respuesta	Response timing	Temps de réponse	Reaktionszeit
+Tiempos de la aplicación	Application timing	Temps de l’application	Anwendungszeiten
+Medir durante 6 s	Measure for 6 s	Mesurer pendant 6 s	6 s lang messen
+Abrir informe	Open report	Ouvrir le rapport	Bericht öffnen
+Midiendo…	Measuring…	Mesure…	Messung…
