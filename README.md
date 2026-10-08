@@ -1,10 +1,16 @@
-# StadiaLink
+<div align="center">
+  <img src="app/assets/readme-logo.svg" width="112" height="112" alt="StadiaLink logo">
+  <h1>StadiaLink</h1>
+  <p><strong>Tu Stadia. A tu manera.</strong></p>
+  <p>Configuración del mando Stadia para Windows 11 x64 · Versión 1.0</p>
+  <p><a href="https://github.com/minysito/StadiaLink/releases/latest"><strong>⬇ Descargar</strong></a> · <a href="https://github.com/minysito/StadiaLink/issues">Comunicar un problema</a> · <a href="LICENSE">GPL-3.0</a></p>
+  <p>🪟 Windows 11 x64 &nbsp; · &nbsp; 🎮 XInput &nbsp; · &nbsp; 🔗 USB + Bluetooth</p>
+  <p><strong><img src="app/assets/flag-es.svg" width="24" height="16" alt="ES"> Español</strong> &nbsp; | &nbsp; <a href="README.en.md"><img src="app/assets/flag-en.svg" width="24" height="16" alt="EN"> English</a> &nbsp; | &nbsp; <a href="README.fr.md"><img src="app/assets/flag-fr.svg" width="24" height="16" alt="FR"> Français</a> &nbsp; | &nbsp; <a href="README.de.md"><img src="app/assets/flag-de.svg" width="24" height="16" alt="DE"> Deutsch</a></p>
+</div>
 
-Aplicación para configurar el mando Stadia en Windows 11 x64. Versión 1.0.
+---
 
-[Descargar](https://github.com/minysito/StadiaLink/releases/latest) · [Comunicar un problema](https://github.com/minysito/StadiaLink/issues) · [GPL-3.0](LICENSE)
-
-## Funciones
+## 🎮 Funciones
 
 - Conexión USB y Bluetooth con salida compatible con XInput.
 - Asignación de botones, atajos y pulsar para hablar.
@@ -14,7 +20,7 @@ Aplicación para configurar el mando Stadia en Windows 11 x64. Versión 1.0.
 - Batería, avisos, bandeja e inicio con Windows.
 - Español, inglés, francés y alemán.
 
-## Instalación
+## 🚀 Instalación
 
 Ejecuta `StadiaLink.Setup.exe`. La instalación del controlador requiere permiso de administrador. El instalador incluye sus componentes y funciona sin Internet. Empareja el mando desde los ajustes Bluetooth de Windows o conéctalo por USB.
 
@@ -26,7 +32,7 @@ Comprueba la descarga comparando el resultado con `SHA256SUMS.txt` de la misma v
 Get-FileHash .\StadiaLink.Setup.exe -Algorithm SHA256
 ```
 
-## Compilación
+## 🛠 Compilación
 
 ### Herramientas necesarias
 
@@ -66,7 +72,7 @@ Si utilizas el ZIP de GitHub, extráelo y abre PowerShell en la carpeta que cont
 | `release/StadiaLink.Setup.exe` | Instalador con componentes y código fuente incorporados. |
 | `release/StadiaLink.Setup.exe.config` | Configuración del instalador. |
 | `release/SHA256.txt` | Huella del instalador generado localmente. |
-| `driver/out/pkg/` | Paquete UMDF compilado, pendiente de la firma local al instalar. |
+| `driver/out/pkg/` | Paquete del controlador UMDF compilado. |
 | `.build/` | Dependencias, objetos y resultados de pruebas. |
 
 Ejecuta `release/StadiaLink.Setup.exe` para instalar tu compilación. Abrir únicamente la aplicación no instala el controlador.
@@ -82,7 +88,7 @@ Para construir por partes:
 
 Si falta MSVC, revisa la carga de trabajo C++ de Visual Studio. Si faltan cabeceras o bibliotecas, instala el SDK indicado. Si falla la descarga del WDK, comprueba el acceso a NuGet. El controlador incorpora la fecha y versión de cada compilación; los binarios no tienen por qué ser idénticos entre compilaciones.
 
-## Uso
+## ⚙️ Uso
 
 Ajusta el perfil y pulsa **Guardar y aplicar**. Cambiar de pestaña descarta los cambios del perfil sin guardar. La casilla de inicio con Windows se guarda inmediatamente. La vibración continua se detiene con **Detener**, al cambiar de pestaña o al cerrar la app.
 
@@ -92,7 +98,7 @@ Los atajos también funcionan con la app minimizada en la bandeja. Para pulsar p
 
 Los perfiles se guardan en `%LOCALAPPDATA%\StadiaStudio\profiles.json`. La app se instala en `%LOCALAPPDATA%\Programs\StadiaStudio`. Estos nombres internos se mantienen por compatibilidad con las versiones anteriores.
 
-## Batería: detección y activación
+## 🔋 Batería: detección y activación
 
 No hay que activar una función del firmware ni instalar otra utilidad. Al detectar el mando, la app consulta el porcentaje en segundo plano mediante `StadiaDevice.dll` y repite la lectura cada **30 segundos**. El resultado aparece en la interfaz y en el icono de la bandeja.
 
@@ -103,33 +109,7 @@ No hay que activar una función del firmware ni instalar otra utilidad. Al detec
 
 Si aparece **Batería: no disponible**, no se ha podido consultar el nivel y no se inventa un porcentaje. En Bluetooth, apaga y enciende el mando y espera la siguiente lectura. Si persiste, comprueba el emparejamiento; quitarlo y volverlo a emparejar permite que Windows enumere de nuevo sus servicios. Por USB, comprueba la conexión de datos y la disponibilidad de la interfaz WinUSB. Que los botones funcionen no garantiza que Windows exponga la interfaz de batería.
 
-## Firma del instalador y del controlador
-
-La versión 1.0 publicada **no tiene firma Authenticode de un editor validado públicamente**. Se distinguen dos firmas:
-
-### Instalador y aplicación
-
-Para distribuir el EXE con identidad de editor verificada hace falta un certificado de firma de código emitido por una autoridad reconocida, o un servicio de firma con validación de identidad. Un certificado autofirmado no proporciona confianza pública en otros equipos.
-
-Con un certificado ya disponible en el almacén personal, utiliza SignTool del Windows SDK. Sustituye la huella y la URL por las de tu certificado y proveedor de sellado de tiempo:
-
-```powershell
-signtool sign /sha1 HUELLA_DEL_CERTIFICADO /fd SHA256 /tr URL_RFC3161_DEL_PROVEEDOR /td SHA256 .\release\StadiaLink.Setup.exe
-signtool verify /pa /v .\release\StadiaLink.Setup.exe
-Get-FileHash .\release\StadiaLink.Setup.exe -Algorithm SHA256
-```
-
-El ejemplo presupone `signtool` en el PATH y acceso a la clave privada; un token o servicio remoto puede requerir parámetros adicionales. Firma después de generar el instalador y regenera la huella de descarga después de firmarlo. No publiques claves, certificados privados ni contraseñas. Para firmar los ejecutables incorporados hay que añadir una etapa de firma antes de empaquetar: el script actual recompila la aplicación al crear el instalador.
-
-Una firma identifica al editor y comprueba integridad, pero no garantiza la desaparición inmediata de los avisos SmartScreen para un binario nuevo. Referencias: [SignTool](https://learn.microsoft.com/en-us/windows/win32/seccrypto/signtool), [reputación SmartScreen](https://learn.microsoft.com/en-us/windows/apps/package-and-deploy/smartscreen-reputation) y [Microsoft Artifact Signing](https://learn.microsoft.com/en-us/azure/artifact-signing/quickstart). La elegibilidad de este último depende del país y del registro como organización o desarrollador individual.
-
-### Controlador
-
-Actualmente `driver/install.ps1` crea un certificado local, añade su parte pública a `Root` y `TrustedPublisher` del equipo y firma el catálogo del paquete. Después elimina la clave privada generada. Esto establece confianza local; **no es una certificación WHQL ni una firma pública de Microsoft**. La desinstalación retira la confianza de esos certificados. El procedimiento del proyecto no requiere desactivar Secure Boot ni activar el modo de pruebas.
-
-Firmar el EXE no sustituye la firma del paquete del controlador. Una distribución con firma de producción requiere preparar y validar por separado el paquete UMDF y su catálogo según la [documentación de Microsoft](https://learn.microsoft.com/en-us/windows-hardware/drivers/install/windows-driver-signing-tutorial), y adaptar el instalador para conservar ese paquete firmado en lugar de volver a firmarlo localmente.
-
-## Problemas, contribuciones y desinstalación
+## 💬 Problemas, contribuciones y desinstalación
 
 Abre un [issue](https://github.com/minysito/StadiaLink/issues) indicando versión de Windows, versión de la app, USB o Bluetooth y pasos para reproducir el fallo. El registro de instalación está en `%LOCALAPPDATA%\StadiaStudio\logs\driver-install.log`; revisa y elimina información personal antes de adjuntarlo.
 
@@ -143,9 +123,9 @@ Desinstala StadiaLink desde **Aplicaciones instaladas** de Windows. Para retirar
 
 Solicita permisos de administrador, elimina los paquetes de este controlador y devuelve el mando al controlador HID incluido en Windows. Puede ser necesario volver a conectarlo.
 
-## Compatibilidad y licencia
+## 🤝 Compatibilidad, créditos y licencia
 
-El transporte de vibración Bluetooth utiliza interfaces privadas de Windows, comprobadas en Windows 11 build 26200; pueden cambiar con las actualizaciones del sistema. El controlador se firma localmente durante la instalación.
+El transporte de vibración Bluetooth utiliza interfaces privadas de Windows, comprobadas en Windows 11 build 26200; pueden cambiar con las actualizaciones del sistema.
 
 GPL-3.0. El controlador parte de [aisk/WinStadia](https://github.com/aisk/WinStadia). Consulta [LICENSE](LICENSE) y [UPSTREAM-README.md](UPSTREAM-README.md). Proyecto independiente de Google y Microsoft.
 
@@ -153,6 +133,6 @@ Parte del proyecto pudo llevarse a cabo gracias al trabajo de **aisk en WinStadi
 
 Referencia de origen: [commit e9e84a0a24c3cc13bf7cc7ac2b8baa2b653ce80a](https://github.com/aisk/WinStadia/commit/e9e84a0a24c3cc13bf7cc7ac2b8baa2b653ce80a). Se conservan los avisos de copyright. StadiaLink y sus modificaciones se distribuyen bajo GPL-3.0.
 
-## Desarrollo con ChatGPT / Codex
+## ✨ Desarrollo con ChatGPT / Codex
 
 El proyecto está gestionado y desarrollado con ayuda de **ChatGPT / Codex**, mediante **vibe coding**: el responsable define las funciones y revisa los resultados; Codex ayuda a implementar, investigar, documentar y ejecutar comprobaciones. Las pruebas con el mando físico y la revisión de cambios forman parte del trabajo. Esta asistencia no implica certificación ni respaldo de OpenAI, Google o Microsoft.
