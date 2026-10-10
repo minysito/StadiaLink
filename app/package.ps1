@@ -22,7 +22,7 @@ foreach($name in @('app','driver','tests')){
     Get-ChildItem (Join-Path $root $name) -File | Where-Object {$_.Extension -in '.cs','.c','.cpp','.h','.ps1','.inf','.manifest','.config','.md'} | Copy-Item -Destination $target
 }
 Copy-Item -LiteralPath "$PSScriptRoot\assets" -Destination (Join-Path $sourceStage 'app/assets') -Recurse
-Copy-Item "$root\LICENSE","$root\UPSTREAM-README.md","$root\README.md" $sourceStage
+Copy-Item "$root\LICENSE","$root\UPSTREAM-README.md","$root\README*.md","$root\CHANGELOG.md" $sourceStage
 Compress-Archive -Path "$sourceStage\*" -DestinationPath "$stage\Source.zip" -Force
 $payload=Join-Path $scratch 'payload.zip'
 Compress-Archive -Path "$stage\*" -DestinationPath $payload -Force

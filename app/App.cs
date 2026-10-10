@@ -8,11 +8,11 @@ using System.Windows.Threading;
 using System.Reflection;
 
 [assembly:AssemblyTitle("StadiaLink")]
-[assembly:AssemblyDescription("Configuración nativa del mando Stadia")]
+[assembly:AssemblyDescription("Native Stadia controller settings")]
 [assembly:AssemblyCompany("StadiaLink")]
 [assembly:AssemblyProduct("StadiaLink")]
-[assembly:AssemblyVersion("1.0.0.0")]
-[assembly:AssemblyFileVersion("1.0.0.0")]
+[assembly:AssemblyVersion("1.0.1.0")]
+[assembly:AssemblyFileVersion("1.0.1.0")]
 
 namespace StadiaStudio {
     public static class Entry {
@@ -26,8 +26,8 @@ namespace StadiaStudio {
                 if(args.Length==2 && args[0]=="--self-test") {SelfTest(args[1]);return 0;}
                 using(Mutex mutex=new Mutex(false,@"Local\StadiaStudio.App")) {
                     bool acquired=false;try{acquired=mutex.WaitOne(0);}catch(AbandonedMutexException){acquired=true;}
-                    if(!acquired){if(!args.Contains("--tray"))MessageBox.Show("StadiaLink ya está abierto.","StadiaLink");return 0;}
-                    Application app=new Application();app.DispatcherUnhandledException+=(s,e)=>{string log=Log(e.Exception);MessageBox.Show("Se produjo un error. Detalles en "+log,"StadiaLink");e.Handled=true;};
+                    if(!acquired){if(!args.Contains("--tray"))MessageBox.Show(I18n.T("StadiaLink ya está abierto."),"StadiaLink");return 0;}
+                    Application app=new Application();app.DispatcherUnhandledException+=(s,e)=>{string log=Log(e.Exception);MessageBox.Show(I18n.T("Se produjo un error. Detalles en ")+log,"StadiaLink");e.Handled=true;};
                     MainWindow window=new MainWindow();
                     if(args.Length==2&&args[0]=="--responsive-test")window.Loaded+=async(s,e)=>{try{await window.VerifyResponsive(args[1]);}catch(Exception ex){Directory.CreateDirectory(args[1]);File.WriteAllText(Path.Combine(args[1],"error.txt"),ex.ToString());Environment.ExitCode=1;}finally{window.Close();}};
                     if(args.Length==2&&args[0]=="--continuous-test")window.Loaded+=(s,e)=>{DispatcherTimer test=new DispatcherTimer{Interval=TimeSpan.FromSeconds(2)};test.Tick+=async(a,b)=>{test.Stop();try{await window.VerifyContinuous(args[1]);}catch(Exception ex){File.WriteAllText(args[1]+".error.txt",ex.ToString());Environment.ExitCode=1;}finally{window.Close();}};test.Start();};
@@ -51,7 +51,7 @@ namespace StadiaStudio {
                     }
                     app.Run(window);mutex.ReleaseMutex();return Environment.ExitCode;
                 }
-            }catch(Exception e){string log=Log(e);if(args.Length>0){if(args.Length==2)File.WriteAllText(args[1]+".error.txt",e.ToString());return 1;}MessageBox.Show(e.Message+Environment.NewLine+"Registro: "+log,"StadiaLink");return 1;}
+            }catch(Exception e){string log=Log(e);if(args.Length>0){if(args.Length==2)File.WriteAllText(args[1]+".error.txt",e.ToString());return 1;}MessageBox.Show(I18n.Error(e)+Environment.NewLine+I18n.T("Registro: ")+log,"StadiaLink");return 1;}
         }
         public static string Log(Exception e){string dir=Path.Combine(ProfileLibrary.DirectoryPath,"logs");Directory.CreateDirectory(dir);string file=Path.Combine(dir,"app.log");File.AppendAllText(file,DateTime.Now.ToString("s")+" "+e+Environment.NewLine);return file;}
         static void Diagnose(string file,bool verify) {

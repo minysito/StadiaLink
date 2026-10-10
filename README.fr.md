@@ -2,7 +2,7 @@
   <img src="app/assets/readme-logo.svg" width="112" height="112" alt="Logo StadiaLink">
   <h1>StadiaLink</h1>
   <p><strong>Votre Stadia. À votre façon.</strong></p>
-  <p>Configuration de la manette Stadia pour Windows 11 x64 · Version 1.0</p>
+  <p>Configuration de la manette Stadia pour Windows 11 x64 · Version 1.0.1</p>
   <p><a href="https://github.com/minysito/StadiaLink/releases/latest"><strong>⬇ Télécharger</strong></a> · <a href="https://github.com/minysito/StadiaLink/issues">Signaler un problème</a> · <a href="LICENSE">GPL-3.0</a></p>
   <p>🪟 Windows 11 x64 &nbsp; · &nbsp; 🎮 XInput &nbsp; · &nbsp; 🔗 USB + Bluetooth</p>
   <p><a href="README.md"><img src="app/assets/flag-es.svg" width="24" height="16" alt="ES"> Español</a> &nbsp; | &nbsp; <a href="README.en.md"><img src="app/assets/flag-en.svg" width="24" height="16" alt="EN"> English</a> &nbsp; | &nbsp; <strong><img src="app/assets/flag-fr.svg" width="24" height="16" alt="FR"> Français</strong> &nbsp; | &nbsp; <a href="README.de.md"><img src="app/assets/flag-de.svg" width="24" height="16" alt="DE"> Deutsch</a></p>

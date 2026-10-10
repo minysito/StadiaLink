@@ -30,11 +30,11 @@ namespace StadiaStudio {
                 shortcut=shell.GetType().InvokeMember("CreateShortcut",BindingFlags.InvokeMethod,null,shell,new object[]{Shortcut});
                 shortcut.GetType().InvokeMember("TargetPath",BindingFlags.SetProperty,null,shortcut,new object[]{Path.Combine(InstallDirectory,"StadiaLink.exe")});
                 shortcut.GetType().InvokeMember("WorkingDirectory",BindingFlags.SetProperty,null,shortcut,new object[]{InstallDirectory});
-                shortcut.GetType().InvokeMember("Description",BindingFlags.SetProperty,null,shortcut,new object[]{"Configura tu Stadia en Windows"});
+                shortcut.GetType().InvokeMember("Description",BindingFlags.SetProperty,null,shortcut,new object[]{I18n.T("Configura tu Stadia en Windows")});
                 shortcut.GetType().InvokeMember("Save",BindingFlags.InvokeMethod,null,shortcut,null);
             }finally{if(shortcut!=null)Marshal.FinalReleaseComObject(shortcut);Marshal.FinalReleaseComObject(shell);}
             using(RegistryKey key=Registry.CurrentUser.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Uninstall\StadiaStudio")) {
-                key.SetValue("DisplayName","StadiaLink");key.SetValue("DisplayVersion","1.0.0");key.SetValue("Publisher","StadiaLink · WinStadia GPLv3");
+                key.SetValue("DisplayName","StadiaLink");key.SetValue("DisplayVersion","1.0.1");key.SetValue("Publisher","StadiaLink · WinStadia GPLv3");
                 key.SetValue("InstallLocation",InstallDirectory);key.SetValue("DisplayIcon",Path.Combine(InstallDirectory,"StadiaLink.exe"));
                 key.SetValue("UninstallString","\""+Path.Combine(InstallDirectory,"StadiaLink.Setup.exe")+"\" /uninstall");
                 key.SetValue("NoModify",1,RegistryValueKind.DWord);key.SetValue("NoRepair",1,RegistryValueKind.DWord);

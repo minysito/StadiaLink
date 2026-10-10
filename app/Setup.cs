@@ -12,21 +12,21 @@ using System.Windows.Shell;
 using System.Windows.Threading;
 using Microsoft.Win32;
 
-[assembly:AssemblyTitle("Instalador de StadiaLink")]
+[assembly:AssemblyTitle("StadiaLink Setup")]
 [assembly:AssemblyProduct("StadiaLink")]
-[assembly:AssemblyVersion("1.0.0.0")]
-[assembly:AssemblyFileVersion("1.0.0.0")]
+[assembly:AssemblyVersion("1.0.1.0")]
+[assembly:AssemblyFileVersion("1.0.1.0")]
 
 namespace StadiaStudio {
     public static class SetupEntry {
         [STAThread] public static int Main(string[] args) {
             try {
                 if(args.Length==2 && args[0]=="/extract") {Extract(args[1]);return 0;}
-                Application application=new Application();SetupWindow window=new SetupWindow(args.Length==1&&args[0]=="/uninstall");
+                Application application=new Application();if(args.Length==2&&args[0]=="/languages-test"){application.ShutdownMode=ShutdownMode.OnExplicitShutdown;Directory.CreateDirectory(args[1]);string code=I18n.Code;try{foreach(LanguageOption option in I18n.Options){I18n.Set(option.Code);foreach(bool remove in new[]{false,true}){SetupWindow check=new SetupWindow(remove);check.Show();check.UpdateLayout();check.Snapshot(Path.Combine(args[1],option.Code+(remove?"-uninstall":"-install")+".png"));check.Close();}}File.WriteAllText(Path.Combine(args[1],"result.txt"),"PASS: installer and uninstaller rendered in all four languages.");return 0;}finally{I18n.Set(code);application.Shutdown();}}SetupWindow window=new SetupWindow(args.Length==1&&args[0]=="/uninstall");
                 if(args.Length==1&&args[0]=="/install-test") window.Loaded+=async(s,e)=>{try{await window.Install();}catch(Exception ex){Log(ex.ToString());Environment.ExitCode=1;}finally{window.Close();}};
                 if(args.Length==2&&args[0]=="/smoke")window.Loaded+=(s,e)=>{DispatcherTimer t=new DispatcherTimer{Interval=TimeSpan.FromMilliseconds(500)};t.Tick+=(a,b)=>{t.Stop();window.Snapshot(args[1]);window.Close();};t.Start();};
                 application.Run(window);return Environment.ExitCode;
-            }catch(Exception ex){Log(ex.ToString());if(args.Length==0)MessageBox.Show(ex.Message,"StadiaLink");return 1;}
+            }catch(Exception ex){Log(ex.ToString());if(args.Length==0)MessageBox.Show(I18n.Error(ex),"StadiaLink");return 1;}
         }
         public static void Log(string text){string path=Path.Combine(ProfileLibrary.DirectoryPath,"logs");Directory.CreateDirectory(path);File.AppendAllText(Path.Combine(path,"setup.log"),DateTime.Now.ToString("s")+" "+text+Environment.NewLine);}
         public static void Extract(string directory) {
@@ -43,17 +43,17 @@ namespace StadiaStudio {
         readonly TextBlock state=Ui.T("Todo preparado para instalar.",13,Ui.Muted);readonly ProgressBar progress=new ProgressBar{Height=4,Maximum=100,Foreground=Ui.Lime,Background=Ui.Line,BorderThickness=new Thickness(0)};
         readonly Button install;readonly CheckBox removeDriver=new CheckBox{Content="Retirar también el controlador del mando",IsChecked=false};readonly bool uninstall;bool working,complete;
         public SetupWindow(bool remove) {
-            uninstall=remove;Title=remove?"Desinstalar StadiaLink":"Instalar StadiaLink";Width=700;Height=670;ResizeMode=ResizeMode.NoResize;WindowStartupLocation=WindowStartupLocation.CenterScreen;Background=Ui.Background;Foreground=Ui.Text;FontFamily=new FontFamily("Segoe UI");WindowStyle=WindowStyle.None;
+            uninstall=remove;Title=I18n.T(remove?"Desinstalar StadiaLink":"Instalar StadiaLink");Width=700;Height=670;ResizeMode=ResizeMode.NoResize;WindowStartupLocation=WindowStartupLocation.CenterScreen;Background=Ui.Background;Foreground=Ui.Text;FontFamily=new FontFamily("Segoe UI");WindowStyle=WindowStyle.None;
             WindowChrome.SetWindowChrome(this,new WindowChrome{CaptionHeight=0,CornerRadius=new CornerRadius(16),GlassFrameThickness=new Thickness(0),ResizeBorderThickness=new Thickness(0)});Ui.Styles(Resources);
             Grid layout=new Grid{Margin=new Thickness(38,22,38,32)};layout.RowDefinitions.Add(new RowDefinition{Height=new GridLength(50)});layout.RowDefinitions.Add(new RowDefinition());layout.RowDefinitions.Add(new RowDefinition{Height=GridLength.Auto});
-            Grid top=new Grid();top.MouseLeftButtonDown+=(s,e)=>{if(e.LeftButton==System.Windows.Input.MouseButtonState.Pressed)DragMove();};TextBlock brand=Ui.T("STADIA STUDIO",15,Ui.Text,true);brand.VerticalAlignment=VerticalAlignment.Center;top.Children.Add(brand);Button close=Ui.Button("×",()=>{if(!working)Close();});close.HorizontalAlignment=HorizontalAlignment.Right;close.Width=36;close.Height=30;close.MinHeight=30;close.Padding=new Thickness(0);close.Background=Ui.Background;close.BorderThickness=new Thickness(0);top.Children.Add(close);layout.Children.Add(top);
+            Grid top=new Grid();top.MouseLeftButtonDown+=(s,e)=>{if(e.LeftButton==System.Windows.Input.MouseButtonState.Pressed)DragMove();};TextBlock brand=Ui.T("STADIALINK",15,Ui.Text,true);brand.VerticalAlignment=VerticalAlignment.Center;top.Children.Add(brand);Button close=Ui.Button("×",()=>{if(!working)Close();});close.HorizontalAlignment=HorizontalAlignment.Right;close.Width=36;close.Height=30;close.MinHeight=30;close.Padding=new Thickness(0);close.Background=Ui.Background;close.BorderThickness=new Thickness(0);top.Children.Add(close);layout.Children.Add(top);
             StackPanel body=new StackPanel();body.Children.Add(Ui.Logo(62));body.Children.Add(Ui.Gap(12));body.Children.Add(Ui.T(remove?"Desinstalar StadiaLink":"Instalar StadiaLink",30,null,true));body.Children.Add(Ui.Gap(12));body.Children.Add(Ui.T(remove?"Retira la aplicación de esta cuenta de Windows. Tus perfiles se conservarán.":"Aplicación y controlador para Windows 11 x64.",14,Ui.Muted));body.Children.Add(Ui.Gap(18));
             StackPanel benefits=new StackPanel();benefits.Children.Add(Ui.T(remove?"DESINSTALACIÓN":"INCLUYE",10,Ui.Lime,true));benefits.Children.Add(Ui.Gap(15));
-            if(remove){benefits.Children.Add(Ui.T("Se eliminarán Studio y su acceso del menú Inicio.",13));benefits.Children.Add(removeDriver);benefits.Children.Add(Ui.Gap(10));benefits.Children.Add(Ui.T("Retirar el controlador afecta a todos los usuarios del equipo y requiere permiso de administrador.",12,Ui.Muted));}
+            if(remove){benefits.Children.Add(Ui.T("Se eliminarán StadiaLink y su acceso del menú Inicio.",13));benefits.Children.Add(removeDriver);benefits.Children.Add(Ui.Gap(10));benefits.Children.Add(Ui.T("Retirar el controlador afecta a todos los usuarios del equipo y requiere permiso de administrador.",12,Ui.Muted));}
             else{benefits.Children.Add(Ui.T("✓  Detección automática por Bluetooth y USB",14));benefits.Children.Add(Ui.Gap(12));benefits.Children.Add(Ui.T("✓  Botones, sticks, gatillos y vibración",14));benefits.Children.Add(Ui.Gap(12));benefits.Children.Add(Ui.T("✓  Perfiles y acciones de Windows",14));benefits.Children.Add(Ui.Gap(12));benefits.Children.Add(Ui.T("✓  Instalación sin descargas",14));}
             body.Children.Add(Ui.Card(benefits,22));body.Children.Add(Ui.Gap(20));body.Children.Add(Ui.T(remove?"Los ajustes Bluetooth de Windows no se modificarán.":"Windows 11 · x64. Windows pedirá permiso de administrador para instalar el controlador y su certificado local.",12,Ui.Muted));Grid.SetRow(body,1);layout.Children.Add(body);
             StackPanel bottom=new StackPanel();bottom.Children.Add(state);bottom.Children.Add(Ui.Gap(12));bottom.Children.Add(progress);bottom.Children.Add(Ui.Gap(18));Grid row=new Grid();row.ColumnDefinitions.Add(new ColumnDefinition());row.ColumnDefinitions.Add(new ColumnDefinition{Width=GridLength.Auto});Button license=Ui.Button("Licencia GPLv3",ShowLicense);license.BorderThickness=new Thickness(0);license.Background=Ui.Background;license.HorizontalAlignment=HorizontalAlignment.Left;row.Children.Add(license);
-            install=Ui.Button(remove?"Desinstalar":"Instalar StadiaLink",async()=>{if(complete){if(!uninstall)Process.Start(Path.Combine(InstallerActions.InstallDirectory,"StadiaLink.exe"));Close();return;}try{await Install();}catch(Exception e){state.Text=I18n.T(e.Message);state.Foreground=Ui.Coral;SetupEntry.Log(e.ToString());install.Content=I18n.T("Reintentar");}},true);Grid.SetColumn(install,1);row.Children.Add(install);bottom.Children.Add(row);Grid.SetRow(bottom,2);layout.Children.Add(bottom);Content=layout;I18n.TranslateTree(layout);Closing+=(s,e)=>{if(working)e.Cancel=true;};
+            install=Ui.Button(remove?"Desinstalar":"Instalar StadiaLink",async()=>{if(complete){if(!uninstall)Process.Start(Path.Combine(InstallerActions.InstallDirectory,"StadiaLink.exe"));Close();return;}try{await Install();}catch(Exception e){I18n.SetText(state,I18n.Error(e));state.Foreground=Ui.Coral;SetupEntry.Log(e.ToString());install.Content=I18n.T("Reintentar");}},true);Grid.SetColumn(install,1);row.Children.Add(install);bottom.Children.Add(row);Grid.SetRow(bottom,2);layout.Children.Add(bottom);Content=layout;I18n.TranslateTree(layout);Closing+=(s,e)=>{if(working)e.Cancel=true;};
         }
         void CheckRequirements(){if(!Environment.Is64BitOperatingSystem)throw new InvalidOperationException("Se necesita Windows x64.");using(RegistryKey key=Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion")){int build;if(key==null||!Int32.TryParse(Convert.ToString(key.GetValue("CurrentBuildNumber")),out build)||build<22000)throw new InvalidOperationException("Se necesita Windows 11.");}}
         public async Task Install() {
