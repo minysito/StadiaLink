@@ -57,6 +57,6 @@ Set-Content -LiteralPath $hashSource -Value ('namespace StadiaStudio { public st
 & "$framework\csc.exe" /nologo /target:winexe /platform:x64 /optimize+ /codepage:65001 /define:UPDATE_ONLY /win32manifest:"$PSScriptRoot\app.manifest" /win32icon:"$PSScriptRoot\StadiaLink.ico" /out:"$release\StadiaLink.Update.exe" /resource:"$updatePayload,payload.zip" /resource:"$root\LICENSE,LICENSE" /resource:"$PSScriptRoot\assets\locales.tsv,locales.tsv" $refs $sources $hashSource
 if($LASTEXITCODE){throw 'Update compilation failed'}
 Copy-Item "$PSScriptRoot\StadiaLink.exe.config" "$release\StadiaLink.Update.exe.config"
-Copy-Item (Join-Path $stage 'Source.zip') (Join-Path $release 'StadiaLink-1.0.2-source.zip') -Force
-@('StadiaLink.Setup.exe','StadiaLink.Update.exe','StadiaLink-1.0.2-source.zip') | ForEach-Object {$name=$_;(Get-FileHash (Join-Path $release $name) -Algorithm SHA256).Hash.ToLowerInvariant()+'  '+$name} | Set-Content (Join-Path $release 'SHA256SUMS.txt') -Encoding utf8
+Copy-Item (Join-Path $stage 'Source.zip') (Join-Path $release 'StadiaLink-1.0.3-source.zip') -Force
+@('StadiaLink.Setup.exe','StadiaLink.Update.exe','StadiaLink-1.0.3-source.zip') | ForEach-Object {$name=$_;(Get-FileHash (Join-Path $release $name) -Algorithm SHA256).Hash.ToLowerInvariant()+'  '+$name} | Set-Content (Join-Path $release 'SHA256SUMS.txt') -Encoding utf8
 Write-Output "Update ready: $release\StadiaLink.Update.exe"
