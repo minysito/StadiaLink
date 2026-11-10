@@ -1,0 +1,62 @@
+name: Publish tested release
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: Successful Windows build run ID
+        required: true
+      tag:
+        description: Existing draft release tag
+        required: true
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      BUILD_RUN: ${{ inputs.run_id }}
+      RELEASE_TAG: ${{ inputs.tag }}
+    steps:
+      - name: Verify build and release source
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(gh api "repos/$GH_REPO/actions/runs/$BUILD_RUN" --jq .conclusion)" = success
+          test "$(gh api "repos/$GH_REPO/actions/runs/$BUILD_RUN" --jq .path)" = .github/workflows/windows-build.yml
+          test "$(gh release view "$RELEASE_TAG" --json isDraft --jq .isDraft)" = true
+          build_sha=$(gh api "repos/$GH_REPO/actions/runs/$BUILD_RUN" --jq .head_sha)
+          target_sha=$(gh release view "$RELEASE_TAG" --json targetCommitish --jq .targetCommitish)
+          build_tree=$(gh api "repos/$GH_REPO/git/commits/$build_sha" --jq .tree.sha)
+          target_tree=$(gh api "repos/$GH_REPO/git/commits/$target_sha" --jq .tree.sha)
+          test "$build_tree" = "$target_tree"
+      - name: Download tested packages
+        uses: actions/download-artifact@v4
+        with:
+          name: StadiaLink-windows-x64
+          run-id: ${{ inputs.run_id }}
+          github-token: ${{ github.token }}
+          path: packages
+      - name: Verify checksums
+        working-directory: packages/release
+        run: |
+          python - <<'PY'
+          import hashlib
+          from pathlib import Path
+          for line in Path('SHA256SUMS.txt').read_text(encoding='utf-8-sig').splitlines():
+              expected, name = line.split(None, 1)
+              assert Path(name).name == name
+              assert hashlib.sha256(Path(name).read_bytes()).hexdigest() == expected
+              print('SHA256 OK:', name)
+          PY
+      - name: Upload release assets
+        run: |
+          gh release upload "$RELEASE_TAG" packages/release/StadiaLink.Setup.exe packages/release/StadiaLink.Update.exe packages/release/StadiaLink-*-source.zip packages/release/SHA256SUMS.txt --clobber
+      - name: Publish release
+        run: gh release edit "$RELEASE_TAG" --draft=false --latest
