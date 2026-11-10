@@ -14,8 +14,8 @@ using Microsoft.Win32;
 
 [assembly:AssemblyTitle("StadiaLink Setup")]
 [assembly:AssemblyProduct("StadiaLink")]
-[assembly:AssemblyVersion("1.0.2.0")]
-[assembly:AssemblyFileVersion("1.0.2.0")]
+[assembly:AssemblyVersion("1.0.3.0")]
+[assembly:AssemblyFileVersion("1.0.3.0")]
 
 namespace StadiaStudio {
     public static class SetupEntry {
