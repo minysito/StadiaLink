@@ -1,0 +1,36 @@
+name: Windows build
+
+on:
+  push:
+    branches: [main, fix/windows-24h2-bluetooth-rumble]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-2022
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build driver, application and installers
+        shell: powershell
+        run: ./app/package.ps1 -Driver
+      - name: Run configuration and application tests
+        shell: powershell
+        run: ./tests/run.ps1
+      - name: Upload installers, driver and checksums
+        uses: actions/upload-artifact@v4
+        with:
+          name: StadiaLink-windows-x64
+          if-no-files-found: error
+          path: |
+            release/StadiaLink.Setup.exe
+            release/StadiaLink.Setup.exe.config
+            release/StadiaLink.Update.exe
+            release/StadiaLink.Update.exe.config
+            release/StadiaLink-*-source.zip
+            release/SHA256SUMS.txt
+            driver/out/pkg/

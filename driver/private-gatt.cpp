@@ -84,8 +84,18 @@ static HRESULT GetDevice(UINT64 address,IInspectable** device) {
     hr=factory->CreateAsync(remote,0,nullptr,nullptr,0,&operation);if(FAILED(hr)) return hr;
     ComPtr<IInspectable> created;hr=Await(operation.Get(),&created);if(FAILED(hr)) return hr;
     if(!created) return E_UNEXPECTED;
-    const GUID iid={0x6bbede1f,0x797f,0x5c17,{0x8a,0xc7,0x3f,0x34,0x20,0x37,0xcb,0x59}};
-    return created->QueryInterface(iid,(void**)device);
+    // Windows 11 24H2 (26100) exposes a different device interface IID.
+    // Both known interfaces use the same GetServices/CreateService slots (11/14).
+    // Probe the actual interface rather than relying on the Windows build number.
+    const GUID deviceIIDs[]={
+        {0x0799a6a6,0xe942,0x5218,{0x8a,0x0e,0x7c,0x9b,0x99,0x6e,0x41,0x58}},
+        {0x6bbede1f,0x797f,0x5c17,{0x8a,0xc7,0x3f,0x34,0x20,0x37,0xcb,0x59}}
+    };
+    for(const GUID& iid:deviceIIDs) {
+        hr=created->QueryInterface(iid,(void**)device);
+        if(hr!=E_NOINTERFACE) return hr;
+    }
+    return E_NOINTERFACE;
 }
 static HRESULT ReadReportReference(IInspectable* discovery,IInspectable* characteristic,const CharacteristicInfo& info,UCHAR* id,UCHAR* type) {
     GUID reference=BluetoothUuid(0x2908);
